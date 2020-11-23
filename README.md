@@ -4,6 +4,8 @@ docker run -ti -v $PWD/secure_enclave:/usr/sdk/secure_enclave --entrypoint /bin/
 cd scripts
 ./generate_signing_key.bash
 ./sign_enclave.bash
+cd ..
+tar -cvf ceremonyVERSION.tar signed_enclaves
 ```
 
 # 2. Creating a signed enclave release docker image:
