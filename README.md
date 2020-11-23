@@ -1,6 +1,6 @@
 # Ceremony procedure to create submission files 
 
-docker run -v/usr/sdk/secure_enclave:/tmp/secure_enclave IMAGE
+docker run -v /usr/sdk/secure_enclave:/tmp/secure_enclave IMAGE
 
 # Creating a signed enclave release docker image:
 
