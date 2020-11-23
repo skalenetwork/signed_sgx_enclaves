@@ -6,7 +6,7 @@ cd scripts
 ./sign_enclave.bash
 ```
 
-# 2Creating a signed enclave release docker image:
+# 2. Creating a signed enclave release docker image:
 
 1. Copy the correct signed enclave version into ./signed_enclave.so
 
