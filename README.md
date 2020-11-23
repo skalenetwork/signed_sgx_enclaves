@@ -1,4 +1,8 @@
-# Instructions for creating a signed enclave release docker image:
+# Ceremony procedure to create submission files 
+
+docker run -v/usr/sdk/secure_enclave:/tmp/secure_enclave IMAGE
+
+# Creating a signed enclave release docker image:
 
 1. Copy the correct signed enclave version into ./signed_enclave.so
 
