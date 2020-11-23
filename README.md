@@ -53,7 +53,7 @@ docker pull skalenetwork/sgxwallet_release:1.58.5-stable.1
 
 Signed enclave
 
-signed_enclave.so.1
+signed_enclave.so.1 
 
 ## Version 2
 
