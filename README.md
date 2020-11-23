@@ -1,11 +1,16 @@
 # 1. Ceremony procedure to create submission files 
 '''
 docker run -v /usr/sdk/secure_enclave:/tmp/secure_enclave IMAGE --entrypoint /bin/bash
-
+'''
+'''
 cd scripts
+'''
 
+'''
 generate_signing_key.bash
+'''
 
+'''
 sign_enclave.bash
 
 '''
