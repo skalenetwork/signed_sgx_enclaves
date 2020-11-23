@@ -5,7 +5,7 @@ cd scripts
 ./generate_signing_key.bash
 ./sign_enclave.bash
 cd ..
-tar -cvf ceremonyVERSION.tar signed_enclaves
+tar -cvf ceremony${ENCLAVE_VERSION.}tar signed_enclaves
 ```
 
 # 2. Creating a signed enclave release docker image:
