@@ -58,7 +58,7 @@ signed_enclave.so.1
 
 Unsigned DockerImage: 
 
-docker pull skalenetwork/sgxwallet:1.59.1-develop.2
+docker pull skalenetwork/sgxwallet_intelsubmission:1.59.1-stable.7
 
 
 
