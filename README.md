@@ -1,6 +1,6 @@
 # 1. Ceremony procedure to create submission files 
 ```
-docker run -ti -v $PWD/secure_enclave:/usr/src/sdk/secure_enclave --entrypoint /bin/bash IMAGE
+docker run -ti -v $PWD/signed_enclaves:/usr/src/sdk/signed_enclaves --entrypoint /bin/bash IMAGE
 cd scripts && ./generate_signing_key.bash && ./sign_enclave.bash && exit
 tar -cvf ceremony${ENCLAVE_VERSION}.tar signed_enclaves
 ```
