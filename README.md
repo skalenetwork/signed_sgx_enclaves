@@ -8,7 +8,7 @@ bash -c "rm -rf signed_enclaves && docker run -ti -v $PWD/signed_enclaves:/usr/s
 Then copy existing key or
 
 ```
-cd scripts && ./generate_signing_key.bash
+cd scripts && ./generate_signing_key.bash && cat ../signed_enclaves/skale_sgx_private_key0.pem
 ```
 
 Then
