@@ -1,7 +1,7 @@
 # 1. Ceremony procedure to create submission files 
 ```
 
-docker run -ti -v $PWD/signed_enclaves:/usr/src/sdk/signed_enclaves --entrypoint /bin/bash IMAGE
+rm -rf signed_enclaves && docker run -ti -v $PWD/signed_enclaves:/usr/src/sdk/signed_enclaves --entrypoint /bin/bash IMAGE
 
 ```
 
