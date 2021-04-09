@@ -24,7 +24,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: secure_enclave_signed0.so
+          files: signed_enclaves/secure_enclave_signed0.so
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
