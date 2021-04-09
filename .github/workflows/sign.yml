@@ -21,8 +21,7 @@ jobs:
       - name: Check signed enclaves dir
         run: ls signed_enclaves
       - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1\
         with:
           files: signed_enclaves/secure_enclave_signed0.so
         env:
