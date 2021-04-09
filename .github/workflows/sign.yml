@@ -1,1 +1,13 @@
- 
+name: Sign and release SGX enclave
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      KEY: ${{ secrets.V2 }}
+    steps:
+      - name: Fail, if older Github Actions machine. Click "Re-run jobs"
+        run: cat /proc/cpuinfo | grep avx512
