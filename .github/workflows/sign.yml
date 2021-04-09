@@ -14,7 +14,7 @@ jobs:
       - name: create dir
         run: mkdir signed_enclaves
       - name: Write secret to file
-      - run: 'echo "$SECRET_KEY" > signed_enclaves/skale_sgx_private_key0.pem'
+        run: 'echo "$SECRET_KEY" > signed_enclaves/skale_sgx_private_key0.pem'
         shell: bash
       - name: sign
         run: docker run -v $PWD/signed_enclaves:/usr/src/sdk/signed_enclaves --entrypoint /bin/bash  skalenetwork/sgxwallet_intelsubmission:stable-latest -c "cd scripts && ls ../signed_enclaves && ./sign_enclave.bash && exit"
