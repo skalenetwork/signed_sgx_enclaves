@@ -11,3 +11,14 @@ jobs:
     steps:
       - name: Fail, if older Github Actions machine. Click "Re-run jobs"
         run: cat /proc/cpuinfo | grep avx512
+      - name: Run docker container
+        run: docker run --name release skalenetwork/sgxwallet_intelsubmission:stable-latest
+      - name: sleep 1 sec
+        run: sleep 1
+      - name: sign
+        run: docker exec -ti release --entrypoint /bin/bash ls
+      
+      
+      
+        
+        
