@@ -16,9 +16,7 @@ jobs:
       - name: sleep 1 sec
         run: sleep 1
       - name: sign
-        run: docker exec -ti release --entrypoint /bin/bash ls
-      
-      
+        run: docker run --name release -v $PWD/signed_enclaves:/usr/src/sdk/signed_enclaves --entrypoint /bin/bash skalenetwork/sgxwallet_intelsubmission:stable-latest
       
         
         
