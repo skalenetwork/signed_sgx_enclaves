@@ -4,17 +4,20 @@ on:
   push:
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-184
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-      KEY: ${{ secrets.V2 }}
+      SECRET_KEY: ${{ secrets.V2 }}
     steps:
       - name: Fail, if older Github Actions machine. Click "Re-run jobs"
         run: cat /proc/cpuinfo | grep avx512
-      - name: export key
-        run: mkdir signed_enclaves && echo ${KEY} >> signed_enclaves/skale_sgx_private_key0.pem && wc signed_enclaves/skale_sgx_private_key0.pem  
+      - name: Write secret to file
+      - name: create dir
+        run: mkdir signed_enclaves
+      - run: 'echo "$SECRET_KEY" > signed_enclaves/skale_sgx_private_key0.pem'
+        shell: bash
       - name: sign
-        run: docker run --name release -v $PWD/signed_enclaves:/usr/src/sdk/signed_enclaves --entrypoint /bin/bash  skalenetwork/sgxwallet_intelsubmission:stable-latest -c "cd scripts && ./sign_enclave.bash && exit"
+        run: docker run --name release -v $PWD/signed_enclaves:/usr/src/sdk/signed_enclaves --entrypoint /bin/bash  skalenetwork/sgxwallet_intelsubmission:stable-latest -c "cd scripts && ls ../signed_enclaves && ./sign_enclave.bash && exit"
 
       
         
