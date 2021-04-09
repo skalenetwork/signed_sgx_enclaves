@@ -11,7 +11,6 @@ jobs:
     steps:
       - name: Fail, if older Github Actions machine. Click "Re-run jobs"
         run: cat /proc/cpuinfo | grep avx512
-      - name: Run docker container
       - name: sign
         run: docker run --name release -v $PWD/signed_enclaves:/usr/src/sdk/signed_enclaves --entrypoint /bin/bash  skalenetwork/sgxwallet_intelsubmission:stable-latest -c "cd scripts && ./sign_enclave.bash && exit"
 
