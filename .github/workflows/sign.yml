@@ -18,6 +18,8 @@ jobs:
         shell: bash
       - name: sign
         run: docker run -v $PWD/signed_enclaves:/usr/src/sdk/signed_enclaves --entrypoint /bin/bash  skalenetwork/sgxwallet_intelsubmission:stable-latest -c "cd scripts && openssl rsa -in ../signed_enclaves/skale_sgx_private_key0.pem -pubout -out ../signed_enclaves/skale_sgx_public_key0.pem && ./sign_enclave.bash && exit"
+      - name: Check signed enclaves dir
+        run: ls signed_enclaves
 
       
         
