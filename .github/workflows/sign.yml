@@ -13,7 +13,7 @@ jobs:
         run: cat /proc/cpuinfo | grep avx512
       - name: Run docker container
       - name: sign
-        run: sudo docker run --name release16 -v $PWD/signed_enclaves:/usr/src/sdk/signed_enclaves --entrypoint /bin/bash  skalenetwork/sgxwallet_intelsubmission:stable-latest -c "cd scripts && ./sign_enclave.bash && exit"
+        run: sudo docker run --name release -v $PWD/signed_enclaves:/usr/src/sdk/signed_enclaves --entrypoint /bin/bash  skalenetwork/sgxwallet_intelsubmission:stable-latest -c "cd scripts && ./sign_enclave.bash && exit"
 
       
         
