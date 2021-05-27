@@ -10,8 +10,8 @@ jobs:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       SECRET_KEY: ${{ secrets.V2 }}
     steps:
-      - name: Fail, if older Github Actions machine. Click "Re-run jobs"
-        run: cat /proc/cpuinfo | grep avx512
+      # - name: Fail, if older Github Actions machine. Click "Re-run jobs"
+      #   run: cat /proc/cpuinfo | grep avx512
       - name: create dir
         run: mkdir signed_enclaves
       - name: Write secret to file
